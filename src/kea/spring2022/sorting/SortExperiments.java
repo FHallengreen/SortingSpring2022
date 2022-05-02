@@ -1,29 +1,41 @@
 package kea.spring2022.sorting;
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class SortExperiments {
     public static void main(String[] args) {
         SortExperiments app = new SortExperiments();
-        app.sort1();
-        //app.sort2();
-        //app.sortBalls1();
+//        app.sort1();
+//        app.sort2();
+//        app.sortBalls1();
         //app.sort3();
         //app.sort4();
-        //app.sortBalls2();
-        //app.sortBalls3();
+//        app.sortBalls2();
+//        app.sortBalls3();
 
-        //app.sortPersons1();
-        //app.sortPersons2();
+//        app.sortPersons1();
+//        app.sortPersons2();
 
-        //app.sortBalls4();
+        app.sortBalls4();
     }
 
     public void sort1() {
-        // TODO: Skriv koden til sorteringsøvelse 1 her i denne metode!
+        int [] numbers = {2,7,3,1,9,4,6,5,10,8};
+
+        System.out.println("Før sortering: " + Arrays.toString(numbers));
+        QuickSort sorter = new QuickSort();
+        sorter.sort(numbers);
+        System.out.println("Efter sortering : " +Arrays.toString(numbers));
     }
     public void sort2() {
-        // TODO: Skriv koden til sorteringsøvelse 2 her i denne metode!
+        String [] words = {"Bæver", "Kylling", "And", "Vildsvin", "Abe"};
+
+        System.out.println("Før sortering: " + Arrays.toString(words));
+        QuickSortStrings sorter = new QuickSortStrings();
+        Arrays.sort(words);
+        System.out.println("Efter sortering : " +Arrays.toString(words));
+
     }
 
     public void sortBalls1() {
@@ -33,7 +45,9 @@ public class SortExperiments {
             ballsarray[i] = new Ball();
         }
 
-        // TODO: Skriv koden til sorteringsøvelse ball-sorter1 her:
+        System.out.println("Før sortering: " + Arrays.toString(ballsarray));
+
+        System.out.println("Efter sortering : " +Arrays.toString(ballsarray));
 
     }
 
@@ -52,7 +66,10 @@ public class SortExperiments {
             ballsarray[i] = new Ball();
         }
 
-        // TODO: Skriv koden til sorteringsøvelse ball-sorter2 (med quicksort) her:
+        System.out.println("Før sortering: " + Arrays.toString(ballsarray));
+        QuickSortSammenlignbar sorter = new QuickSortSammenlignbar();
+        sorter.sort(ballsarray);
+        System.out.println("Efter sortering : " +Arrays.toString(ballsarray));
 
     }
 
@@ -63,7 +80,10 @@ public class SortExperiments {
             ballsarray[i] = new Ball();
         }
 
-        // TODO: Skriv koden til sorteringsøvelse ball-sorter3 (med quicksort-sammenlignbar) her:
+        System.out.println("Før sortering: " + Arrays.toString(ballsarray));
+        QuickSortSammenlignbar sorter = new QuickSortSammenlignbar();
+        sorter.sort(ballsarray);
+        System.out.println("Efter sortering : " +Arrays.toString(ballsarray));
 
     }
 
@@ -74,8 +94,8 @@ public class SortExperiments {
         arr[2] = new Person("Harry", "Potter");
 
         System.out.println("Før sortering: " + Arrays.toString(arr));
-        // TODO: Sorter array af personer med quickSort
-
+        QuickSortSammenlignbar sorter = new QuickSortSammenlignbar();
+        sorter.sort( arr);
         System.out.println("Efter sortering: " + Arrays.toString(arr));
 
     }
@@ -87,8 +107,7 @@ public class SortExperiments {
         arr[2] = new Person("Harry", "Potter");
 
         System.out.println("Før sortering: " + Arrays.toString(arr));
-        // TODO: Sorter array af personer med Arrays.sort
-
+        Arrays.sort(arr);
         System.out.println("Efter sortering: " + Arrays.toString(arr));
 
     }
@@ -102,7 +121,7 @@ public class SortExperiments {
 
         System.out.println("Før sortering: " + Arrays.toString(ballsarray));
         // TODO: Sorter array af balls med Arrays.sort
-
+        Arrays.sort(ballsarray);
         System.out.println("Efter sortering: " + Arrays.toString(ballsarray));
 
     }
